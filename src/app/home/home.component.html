@@ -2,8 +2,8 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="assets/Assets/cardamom_1.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
-                <button class="btn btn-dark" type="button">SpiceX</button>
+                <img src="assets/Assets/spicex.png" alt="Logo" style="width:40px;" class="rounded-pill">
+                <button class="btn btn-dark" type="button">SPICEX</button>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -43,38 +43,42 @@
     </div>
 
     <!-- Carousel -->
-    <div id="demo" class="carousel slide ms-5" data-bs-ride="carousel">
 
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active bg-success"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="bg-success"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="bg-success"></button>
+    <div class="container">
+        <div id="demo" class="carousel slide " data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active bg-success"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="bg-success"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="bg-success"></button>
+            </div>
+    
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/Assets/cardamom_1.jpg" height="500px" alt="Los Angeles" class="d-block " style="width:100%; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Assets/cinnamon.jpg" height="500px" alt="Chicago"
+                        class="d-block " style="width:100%; object-fit: cover;">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Assets/glove.jpg" height="500px" alt="New York" class="d-block"
+                        style="width:100%; object-fit: cover;">
+                </div>
+            </div>
+    
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-success"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-success"></span>
+            </button>
         </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner ms-5">
-            <div class="carousel-item active ms-5">
-                <img src="assets/Assets/cardamom_1.jpg" height="500px" alt="Los Angeles" class="d-block ms-5" style="width:75%">
-            </div>
-            <div class="carousel-item ms-5">
-                <img src="assets/Assets/cinnamon.jpg" height="500px" alt="Chicago"
-                    class="d-block ms-5" style="width:75%">
-            </div>
-            <div class="carousel-item ms-5">
-                <img src="assets/Assets/glove.jpg" height="500px" alt="New York" class="d-block ms-5"
-                    style="width:75%">
-            </div>
-        </div>
-
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-success"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-success"></span>
-        </button>
     </div>
+    
 
     <div class="container-fluid mt-3 text-success">
         <h3>POPULAR</h3>
@@ -83,7 +87,7 @@
 
     <div class="container mt-3 " style="min-height: 60vh;">
 
-        <div class="row ms-5">
+        <div class="row ms-4">
 
             <div class="col-sm-4 mt-5 ">
 

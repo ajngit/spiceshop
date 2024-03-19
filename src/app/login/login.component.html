@@ -85,13 +85,13 @@
   
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
+                  <input [(ngModel)]="email" type="email" id="form3Example3" class="form-control" />
                   <label class="form-label" for="form3Example3">Email address</label>
                 </div>
   
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
+                  <input [(ngModel)]="pswd" type="password" id="form3Example4" class="form-control" />
                   <label class="form-label" for="form3Example4">Password</label>
                 </div>
   
@@ -104,7 +104,7 @@
                 </div> -->
   
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-success btn-block mb-4">
+                <button (click)="login(email,pswd)" type="submit" class="btn btn-success btn-block mb-4">
                   Log in
                 </button><br><br>
                 <label class="form-check-label" for="form2Example33">

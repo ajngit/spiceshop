@@ -23,11 +23,11 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-    it('should render titl:LOGIN', () => {
+
+  it('should have title named "LOGIN"', () => {
     const fixture = TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h3')?.textContent).toContain('LOGIN');
   });
-  
 });

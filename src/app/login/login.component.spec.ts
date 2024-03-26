@@ -68,5 +68,46 @@ it('password field validity', () => {
     expect(errors['required']).toBeFalsy();
 });
 
+it('should login successfully with valid credentials', () => {
+  spyOn(window, 'alert');
+  component.loginForm.setValue({ email: 'abc@gmail.com', password: '123' });
+  component.login();
+  expect(window.alert).toHaveBeenCalledWith('Login Success');
+});
+
+it('should fail to login with invalid credentials', () => {
+  spyOn(window, 'alert');
+  component.loginForm.setValue({ email: 'invalid@gmail.com', password: 'invalid' });
+  component.login();
+  expect(window.alert).toHaveBeenCalledWith('Invalid email or password');
+});
+
+it('should have valid form when both email and password are provided', () => {
+  component.loginForm.setValue({ email: 'abc@gmail.com', password: '123' });
+  expect(component.loginForm.valid).toBeTruthy();
+});
+
+it('should have invalid form when either email or password is missing', () => {
+  component.loginForm.setValue({ email: 'abc@gmail.com', password: '' });
+  expect(component.loginForm.valid).toBeFalsy();
+
+  component.loginForm.setValue({ email: '', password: '123' });
+  expect(component.loginForm.valid).toBeFalsy();
+});
+
+it('should mark email field as invalid for invalid email format', () => {
+  const email = component.loginForm.controls['email'];
+  email.setValue('invalid_email');
+  expect(email.valid).toBeFalsy();
+});
+
+it('should mark email field as valid for valid email format', () => {
+  const email = component.loginForm.controls['email'];
+  email.setValue('valid@gmail.com');
+  expect(email.valid).toBeTruthy();
+});
+
+
+
 
 });

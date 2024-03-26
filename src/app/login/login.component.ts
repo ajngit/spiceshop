@@ -31,12 +31,13 @@ export class LoginComponent {
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   ngOnInit() {
+    
   }
 
   login() {

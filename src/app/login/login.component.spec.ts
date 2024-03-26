@@ -38,15 +38,16 @@ describe('LoginComponent', () => {
   it('email field validity', () => {
     let errors: any = {}; 
     const email = component.loginForm.controls['email'];
-    // expect(email.valid).toBeFalsy();
+    expect(email.valid).toBeFalsy();
 
-    // errors = email.errors || {};
-    // expect(errors['required']).toBeTruthy();
+    errors = email.errors || {};
+    expect(errors['required']).toBeTruthy();
 
-    // email.setValue('abc');
-    // errors = email.errors || {};
-    // expect(errors['required']).toBeFalsy();
-    // expect(errors['email']).toBeTruthy();
+    email.setValue('abc');
+    errors = email.errors || {};
+    expect(errors['required']).toBeFalsy();
+    expect(errors['email']).toBeTruthy();
+
 
     email.setValue('abc@gmail.com');
     errors = email.errors || {};

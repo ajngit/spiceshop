@@ -9,11 +9,11 @@
     <div class="row g-5">
         <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
             <div class="p-4">
-                
-                
+
+
                 <div>
                     <form>
-                        
+
 
                         <div class="text-secondary mt-4 mb-2">Billing Address</div>
                         <div class="row mb-3">
@@ -54,7 +54,8 @@
                     <div>$10.00</div>
                 </div>
                 <div class="my-4 d-flex justify-content-between align-items-center">
-                    <div style="min-width:130px">Walnuts<br><span class="text-secondary"><small>(100gm) x 1</small></span></div>
+                    <div style="min-width:130px">Walnuts<br><span class="text-secondary"><small>(100gm) x
+                                1</small></span></div>
                     <div class="w-100 mx-3 borderDotted"></div>
                     <div>$10.00</div>
                 </div>
@@ -73,11 +74,15 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center ">
                     <div><input class="" type="checkbox" id="agreeTerms"></div>
-                    <div class="mx-4 "><label for="agreeTerms"><small>I agree to the <a class="text-success text-decoration-none" href="#">Terms and Conditions</a>
-                                and the <a class="text-success text-decoration-none" href="#">Automatic Renewal Terms</a> above</small></label></div>
+                    <div class="mx-4 "><label for="agreeTerms"><small>I agree to the <a
+                                    class="text-success text-decoration-none" href="#">Terms and Conditions</a>
+                                and the <a class="text-success text-decoration-none" href="#">Automatic Renewal
+                                    Terms</a> above</small></label></div>
                 </div>
                 <div class="my-4">
-                    <google-pay-button environment="TEST"  ></google-pay-button>
+                    <google-pay-button environment="TEST" buttonType="buy" buttonSizeMode="fill"
+                        [paymentRequest]="paymentRequest"
+                        (loadpaymentdata)="onLoadPaymentData($event)"></google-pay-button>
                 </div>
             </div>
         </div>

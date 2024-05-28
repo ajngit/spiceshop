@@ -11,48 +11,54 @@ import { GooglePayButtonComponent, GooglePayButtonModule, ReadyToPayChangeRespon
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent {
-
-  buttonColor = "black";
-  buttonType = "buy";
-  isCustomSize = false;
-  buttonWidth = 240;
-  buttonHeight = 40;
-  isTop = window === window.top;
-
-  paymentRequest = {
+ 
+  paymentRequest: google.payments.api.PaymentDataRequest = {
     apiVersion: 2,
     apiVersionMinor: 0,
     allowedPaymentMethods: [
       {
-        type: "CARD",
+        type: 'CARD',
         parameters: {
-          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-          allowedCardNetworks: ["AMEX", "VISA", "MASTERCARD"]
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA']
         },
         tokenizationSpecification: {
-          type: "PAYMENT_GATEWAY",
+          type: 'PAYMENT_GATEWAY',
           parameters: {
-            gateway: "example",
-            gatewayMerchantId: "exampleGatewayMerchantId"
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId'
           }
         }
       }
     ],
     merchantInfo: {
-      merchantId: "12345678901234567890",
-      merchantName: "Demo Merchant"
+      merchantId: '17613812255336763067',
+      merchantName: 'Demo Only (you will not be charged)'
     },
     transactionInfo: {
-      totalPriceStatus: "FINAL",
-      totalPriceLabel: "Total",
-      totalPrice: "100.00",
-      currencyCode: "USD",
-      countryCode: "US"
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '10.00', // or any other valid amount
+      currencyCode: 'INR', // Set currency code to INR
+      countryCode: 'IN'
     }
   };
 
-  onLoadPaymentData(event:any) {
-    console.log("load payment data", event.detail);
+  
+
+  
+
+  constructor() {}
+
+  ngOnInit() {
+    
   }
+
+  async onLoadPaymentData(event: Event) {
+    console.log(event);
+    const paymentData = (event as CustomEvent<google.payments.api.PaymentData>).detail;
+    console.log(paymentData);
+    // Here you can handle the payment data as needed for testing purposes.
+}
 }
 

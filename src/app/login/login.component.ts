@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Users } from './Models/users';
+import { LoginService } from './services/login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -26,18 +29,33 @@ export class LoginComponent {
   //   }
   // }
 
-
+  users: Users[] = [];
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private LoginService: LoginService) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+     this.getData();
     
+  }
+
+   getData() {
+     this.LoginService.getData()
+      .subscribe(
+        (data:any) => {
+          this.users=data; // Handle the response data here
+          console.log(this.users);
+          
+        },
+        (error) => {
+          console.error(error); // Handle errors here
+        }
+      );
   }
 
   login() {

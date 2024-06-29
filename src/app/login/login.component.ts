@@ -40,7 +40,7 @@ export class LoginComponent {
   }
 
   async ngOnInit() {
-     this.getData();
+    // this.getData();
     
   }
 

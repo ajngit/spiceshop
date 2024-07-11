@@ -135,3 +135,66 @@
 .quantity .price{
 	font-family: Palatino, 'Palatino', serif;
 }
+
+/* .container {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+} */
+
+.progress-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Flexible grid columns */
+    gap: 10px; /* Gap between steps */
+    background-color: white;
+    padding: 10px;
+	margin-left: 110px;
+    /* border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.step {
+    display: flex;
+	width: 200px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 2px solid seagreen;
+    border-radius: 8px;
+    white-space: nowrap; /* Ensure title does not wrap */
+}
+
+.step.active {
+    background-color: seagreen;
+	width: 200px;
+	
+}
+
+.step.active .step-number{
+	color: black;
+}
+.step.active .step-title {
+    color: #ffffff;
+}
+ 
+.step-number {
+	color: black;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid seagreen;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 10px; /* Space between number and title */
+}
+
+.step-title {
+    font-size: 0.9rem;
+    color: #666666;
+}

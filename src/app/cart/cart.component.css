@@ -53,6 +53,7 @@
 
 .shopping-cart .items .product .info .product-name{
 	font-weight: 600;
+	font-family: Palatino, 'Palatino', serif;
 }
 
 .shopping-cart .items .product .info .product-name .product-info{
@@ -131,3 +132,6 @@
 	}
 }
 
+.quantity .price{
+	font-family: Palatino, 'Palatino', serif;
+}

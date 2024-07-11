@@ -1,12 +1,12 @@
 .custom-card {
-    height: 85%; /* Reduce card height by 30% */
+    height: 80%; /* Reduce card height by 30% */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .custom-card .card-img-top {
-    height: 45%; /* Set image height to half of the card height */
+    height: 50%; /* Set image height to half of the card height */
     object-fit: cover; /* Ensure images cover the card area */
 }
 
@@ -21,3 +21,20 @@
      transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06); }
 
+.spiceheader{
+    width: fit-content; /* Adjust width as needed */
+            height: 500px; /* Adjust height as needed */
+            background-image: url('../../assets/Assets/cor1 (3).jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Roboto', sans-serif;   
+}
+
+.spiceheader .row{
+margin-top: 100px;
+
+}
+
+.spiceheader p{
+    font-family: Palatino, 'Palatino', serif;
+}

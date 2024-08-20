@@ -20,12 +20,12 @@ export class RegisterService {
   }
 
   // Method to post data to the API
-  Authenticate( data: Authenticate): Observable<SaveResponse> {
-    const url = `${this.apiUrl}/user`;
+  SaveUser( data: Authenticate): Observable<SaveResponse> {
+    const url = `${this.apiUrl}/register`;
     return this.http.post<SaveResponse>(url, data, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
-      })
+      }) 
     });
   }
 

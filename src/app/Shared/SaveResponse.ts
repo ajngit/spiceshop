@@ -1,5 +1,5 @@
 export class SaveResponse{
     Saved : boolean    = false  ;
     ID    : number     = 0      ;
-    Msg   : string     = ''     ;
+    Status: number     = 0      ;
 }

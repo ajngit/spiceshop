@@ -1,21 +1,25 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Users } from '../Models/users';
+import { loginData } from '../Models/loginData';
+import { SaveResponse } from '../../Shared/SaveResponse';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
+  private apiUrl = 'http://localhost:3001'; // Replace with your API URL
+  
   constructor(private http :HttpClient) { }
 
-  getData(): Observable<Users[]> {
-    return this.http.get<Users[]>('http://localhost:3001/user').pipe(
-      catchError((error) => {
-        console.error('An error occurred:', error); // Log the error to the console
-        return []; // Re-throw the error to propagate it to the subscriber
-      })
-    );
+  Authenticate( data: loginData): Observable<SaveResponse> {
+    const url = `${this.apiUrl}/login`;
+    return this.http.post<SaveResponse>(url, data, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }) 
+    });
   }
 }

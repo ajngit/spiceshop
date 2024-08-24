@@ -1,0 +1,61 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <section class="add-product container">
+                <h2>Add/Edit Product</h2>
+                <form class="shadow ">
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" name="product-name" required>
+            
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="spice">Spice</option>
+                        <option value="herb">Herb</option>
+                    </select>
+            
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description"></textarea>
+            
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" step="0.01" required>
+            
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" required>
+            
+                    <label for="image">Product Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
+            
+                    <button class="btn btn-success" type="submit">Save Product</button>
+                    <button class="btn btn-dark" type="button" onclick="window.history.back();">Cancel</button>
+                </form>
+            </section>
+            
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+</div>
+
+<div class="container">
+    <section class="product-list">
+        <h2>Product List</h2>
+        <input type="text" id="search-bar" placeholder="Search products...">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                 
+            </tbody>
+        </table>
+    </section>
+</div>

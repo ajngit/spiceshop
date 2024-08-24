@@ -57,89 +57,18 @@
         <p>The followings are popular best sellers.</p>
     </div><br><br>
 
-    <div class="container mt-3" style="min-height: 60vh;">
+    <div class="container mt-3" style="min-height: 60vh;" >
         <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col ">
+            <div class="col " *ngFor="let product of this.ProductDetails">
                 <div class="card custom-card">
-                    <img class="card-img-top " src="assets/Assets/cardamom_1.jpg" alt="Card image">
+                    <img class="card-img-top " src="{{product.ImageURL}}" alt="Card image">
                     <div class="card-body">
-                        <h4 class="card-title">Cardamom</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-success btn-sm mt-auto">BUY</a>
+                        <h4 class="card-title">{{product.ProductName}}</h4>
+                        <p class="card-text">{{product.Description}}</p>
+                        <a [routerLink]="['/details']" [state]="{ProductID:product.ProductID  }"  class="btn btn-success btn-sm mt-auto">BUY</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/glove.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Clove</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-sm btn-success mt-auto">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/cinnamon.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Cinnamon</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-success mt-auto btn-sm">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/cardamom_1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Cardamom</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-success btn-sm mt-auto">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/glove.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Clove</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-sm btn-success mt-auto">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/cinnamon.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Cinnamon</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-success mt-auto btn-sm">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/cardamom_1.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Cardamom</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-success btn-sm mt-auto">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card custom-card">
-                    <img class="card-img-top" src="assets/Assets/glove.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Clove</h4>
-                        <p class="card-text">Some example text. John Doe is an architect and engineer.</p>
-                        <a href="/details" class="btn btn-sm btn-success mt-auto">BUY</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat these card elements as needed -->
         </div>
     </div>
     

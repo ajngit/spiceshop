@@ -12,8 +12,12 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                 
+            <tbody *ngFor="let user of UserData">
+                <td>{{user.UserName}}</td>
+                <td>{{user.Email}}</td>
+                <td>{{user.Phone}}</td>
+                <td>{{user.Address}}</td>
+                <td></td>
             </tbody>
         </table>
     </section>

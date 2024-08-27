@@ -118,3 +118,38 @@ input[type=checkbox]{
     font-size: 0.9rem;
     color: #666666;
 }
+
+
+
+
+
+
+/* table style */
+
+
+
+
+.product-list input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px; /* Decreased spacing */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.product-list th{
+    padding: 6px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.product-list {
+   margin-top: 100px;
+}

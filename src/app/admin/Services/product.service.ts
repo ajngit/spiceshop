@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductDetail } from '../Models/ProductDetail';
+import { UserData } from '../Models/UserData';
 
 @Injectable({
   providedIn: 'root'
@@ -30,4 +31,14 @@ export class ProductService {
       params: new HttpParams().set('ProductID', ID.toString())
     });
   }
+
+  GetUsers(): Observable<UserData[]> {
+    const url = `${this.apiUrl}/user`;
+    return this.http.get<UserData[]>(url , {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }) 
+    });
+  }
+
 }

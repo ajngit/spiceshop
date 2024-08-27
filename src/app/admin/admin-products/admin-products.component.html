@@ -53,8 +53,12 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                 
+            <tbody *ngFor=" let product of this.ProductDetails">
+                <td>{{product.ProductName}}</td>
+                <td>{{product.ProductType}}</td>
+                <td>{{product.Price}}</td>
+                <td>{{product.TotalQuantity}}</td>
+                <td>Actions</td>
             </tbody>
         </table>
     </section>

@@ -8,6 +8,8 @@ import { ProductService } from '../admin/Services/product.service';
 import { map, Observable } from 'rxjs';
 import { Registration } from './Models/Registration';
 import { FormsModule } from '@angular/forms';
+import { ProductRegistrationService } from './Service/product-registration.service';
+import { SaveResponse } from '../Shared/SaveResponse';
 
 @Component({
   selector: 'app-details',
@@ -22,11 +24,12 @@ export class DetailsComponent {
   ProductID: number=0;
   state$: Observable<any> | undefined;
   Registration : Registration = new Registration();
+  ProductRegID: number=0;
 
   constructor(private ProductService : ProductService,
     private router : Router,
     private route :ActivatedRoute,
-   // private platformLocation:platformLocation
+    private ProductRegistrationService:ProductRegistrationService
   ){
       this.state$ = this.route.paramMap.pipe( map(() => window.history.state), ); 
      // platformLocation.onPopState(() => {});
@@ -61,12 +64,28 @@ export class DetailsComponent {
     
 }
 
-AddToCart(){
+async AddToCart(){
 
-
+debugger;
   this.Registration.ProductID=this.ProductID;
   this.Registration.Calculate(this.ProductDetails);
   console.log('test reg',this.Registration);
+
+  this.ProductRegistrationService.SaveRegistration(this.Registration)
+    .subscribe((data) => {
+      console.log(data);
+      let resp = new SaveResponse();
+      resp = data;
+      debugger;
+      if (resp.Saved == true) {
+        alert("Added To cart!");
+        console.log('added');
+        this.ProductRegID = resp.ID;
+        localStorage.setItem('ProductRegID', JSON.stringify(this.ProductRegID));
+
+        this.router.navigate(['cart']);
+      }
+    })
   
 
 }

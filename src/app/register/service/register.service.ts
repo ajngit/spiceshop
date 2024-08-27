@@ -13,11 +13,7 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
-  // Method to get data from the API
-  getData(endpoint: string): Observable<any> {
-    const url = `${this.apiUrl}/${endpoint}`;
-    return this.http.get<any>(url);
-  }
+ 
 
   // Method to post data to the API
   SaveUser( data: Authenticate): Observable<SaveResponse> {
@@ -30,18 +26,17 @@ export class RegisterService {
   }
 
   // Method to update data on the API
-  updateData(endpoint: string, data: any): Observable<any> {
-    const url = `${this.apiUrl}/${endpoint}`;
-    return this.http.put<any>(url, data, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    });
-  }
+  // updateData(endpoint: string, data: any): Observable<any> {
+  //   const url = `${this.apiUrl}/${endpoint}`;
+  //   return this.http.put<any>(url, data, {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json'
+  //     })
+  //   });
+  // }
 
-  // Method to delete data from the API
-  deleteData(endpoint: string): Observable<any> {
-    const url = `${this.apiUrl}/${endpoint}`;
-    return this.http.delete<any>(url);
+  // // Method to delete data from the API
+  // deleteData(endpoint: string): Observable<any> {
+  //   const url = `${this.apiUrl}/${endpoint}`;
+  //   return this.http.delete<any>(url);
   }
-}

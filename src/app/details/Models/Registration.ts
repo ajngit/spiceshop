@@ -8,6 +8,9 @@ export class Registration{
     GrossTotal   : number =0 ;
     NetTotal     : number =0 ;
     ServiceCharge: number =0 ;
+    PaymentCharge: number =0 ;
+    DeliveryCharge: number =0 ;
+    TaxCharge    : number =0 ;
     ModifiedDate : Date = new Date() ;
     ModifiedUser : number =0 ;
     DelStatus    : boolean=false;
@@ -16,4 +19,7 @@ export class Registration{
         this.NetTotal =    InputData.Price*this.Quantity;
 
     }
+
+  
+    
 }

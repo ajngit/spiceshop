@@ -23,7 +23,7 @@
 
 .spiceheader{
     width: 100%; /* Adjust width as needed */
-            height: 500px; /* Adjust height as needed */
+            height: 100vh; /* Adjust height as needed */
             background-image: url('../../assets/Assets/cor1 (3).jpg');
             background-size: cover;
             background-position: center;

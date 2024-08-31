@@ -3,16 +3,17 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { GooglePayButtonComponent, GooglePayButtonModule, ReadyToPayChangeResponse } from '@google-pay/button-angular';
+
 
 @Component({
-  selector: 'app-checkout',
+  selector: 'app-payment',
   standalone: true,
-  imports: [HeaderComponent,FooterComponent,CommonModule,RouterModule],
-  templateUrl: './checkout.component.html',
-  styleUrl: './checkout.component.css'
+  imports: [HeaderComponent,FooterComponent,CommonModule,RouterModule,GooglePayButtonModule],
+  templateUrl: './payment.component.html',
+  styleUrl: './payment.component.css'
 })
-export class CheckoutComponent {
- 
+export class PaymentComponent {
   paymentRequest: google.payments.api.PaymentDataRequest = {
     apiVersion: 2,
     apiVersionMinor: 0,
@@ -62,4 +63,3 @@ export class CheckoutComponent {
     // Here you can handle the payment data as needed for testing purposes.
 }
 }
-

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Users } from './Models/users';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SaveResponse } from '../Shared/SaveResponse';
+import { loginData } from './Models/loginData';
 
 @Component({
   selector: 'app-login',
@@ -14,21 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class LoginComponent {
 
-   password: string = '';
-   email: string = '';
-
-  // constructor(private router: Router) {
-
-  // }
-  // async ngOnInit() {
-  // }
-  // login() {
-  //   debugger;
-  //   if (this.pswd===123 &&  this.email==='abc@gmail.com') {
-  //     alert('Login Success');
-  //   }
-  // }
-
+  password: string = '';
+  email: string = '';
+  loginData = new loginData();
   users: Users[] = [];
   loginForm: FormGroup;
 
@@ -44,33 +34,23 @@ export class LoginComponent {
     
   }
 
-   getData() {
-     this.LoginService.getData()
-      .subscribe(
-        (data:any) => {
-          this.users=data; // Handle the response data here
-          console.log(this.users);
-          
-        },
-        (error) => {
-          console.error(error); // Handle errors here
-        }
-      );
-  }
-
-  login() {
-    debugger;
+   
+  async login(){
     if (this.loginForm.valid) {
-      const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
-
-      if (email === 'abc@gmail.com' && password === '123') {
-        alert('Login Success');
-      } else {
-        alert('Invalid email or password');
-      }
-    } else {
-      alert('Please enter valid email and password');
-    }
+      this.loginData.Email = this.loginForm.value.email;
+      this.loginData.Password  = this.loginForm.value.password;
+      await this.LoginService.Authenticate(this.loginData).subscribe((data)=>{
+        console.log(data);
+        let resp = new SaveResponse();
+        resp=data;
+        if( resp.Saved==true){
+          alert("Login Success!");
+          this.router.navigate(['']);
+        }else{
+          alert("Login Failed!");
+        }
+    })
+    
   }
+}
 }

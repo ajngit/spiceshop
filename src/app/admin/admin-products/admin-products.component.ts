@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
-import { ProductDetail } from '../admin/Models/ProductDetail';
-import { ProductService } from '../admin/Services/product.service';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { ProductDetail } from '../Models/ProductDetail';
+import { ProductService } from '../Services/product.service';
 import { CommonModule } from '@angular/common';
-import { map, Observable } from 'rxjs';
-
 @Component({
-  selector: 'app-home',
+  selector: 'app-admin-products',
   standalone: true,
-  imports: [HeaderComponent,FooterComponent,CommonModule,RouterModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  imports: [CommonModule,RouterModule],
+  templateUrl: './admin-products.component.html',
+  styleUrl: './admin-products.component.css'
 })
-export class HomeComponent {
+export class AdminProductsComponent {
 
   ProductDetails : ProductDetail[] = [];
 
@@ -36,4 +32,5 @@ export class HomeComponent {
     })
     
 }
+
 }

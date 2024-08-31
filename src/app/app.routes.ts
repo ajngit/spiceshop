@@ -8,6 +8,8 @@ import { DetailsComponent } from './details/details.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AdminhomeComponent } from './admin/adminhome/adminhome.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 export const routes: Routes = [
@@ -41,8 +43,12 @@ export const routes: Routes = [
 },
 
 {
-  path:'admin', component:AdminhomeComponent
-}
+  path:'payment',component:PaymentComponent
+},
+
+{
+  path:'admin',loadChildren: () => import('./admin/admin.routes').then(m => m.AdminModule)}
+,
 
 
 ];

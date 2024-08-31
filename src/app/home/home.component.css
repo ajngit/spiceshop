@@ -22,7 +22,7 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06); }
 
 .spiceheader{
-    width: fit-content; /* Adjust width as needed */
+    width: 100%; /* Adjust width as needed */
             height: 500px; /* Adjust height as needed */
             background-image: url('../../assets/Assets/cor1 (3).jpg');
             background-size: cover;
